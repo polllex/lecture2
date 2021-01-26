@@ -19,7 +19,7 @@ function init() {
     scene.background = new THREE.Color(1,1,1)
     var aspect = window.innerWidth / window.innerHeight;
     var d = 20;
-    camera = new THREE.OrthographicCamera( - d * aspect, d * aspect, d, - d, 1, 1000 );
+    camera = new THREE.OrthographicCamera( - d * aspect, d * aspect, d, - d, -10000, 10000 );
     
     camera.position.set( 20, 20, 20 ); // all components equal
     camera.lookAt( scene.position ); // or the origin

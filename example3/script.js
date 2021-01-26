@@ -17,8 +17,12 @@ function init() {
     // create a scene and a camera
     scene = new THREE.Scene()
     scene.background = new THREE.Color(1,1,1)
-    camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
-    camera.position.y = - 100
+    var aspect = window.innerWidth / window.innerHeight;
+    var d = 20;
+    camera = new THREE.OrthographicCamera( - d * aspect, d * aspect, d, - d, 1, 1000 );
+    
+    camera.position.set( 20, 20, 20 ); // all components equal
+    camera.lookAt( scene.position ); // or the origin
 
     // create the renderer and add it to the html
     renderer = new THREE.WebGLRenderer( { antialias: true } )
